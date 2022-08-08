@@ -1,4 +1,7 @@
 import { FormControl, InputLabel, FormHelperText, OutlinedInput } from '@mui/material';
+import FormControlUnstyled, {
+  useFormControlUnstyledContext,
+} from '@mui/base/FormControlUnstyled';
 import { useField } from 'formik';
 
 interface myTextProps {
@@ -17,15 +20,13 @@ export const MyTextInput = ({ label, ariaDescribe, ...props }:myTextProps) => {
   console.log("STUFF ", field, meta)
   return (
     <FormControl variant='outlined'>
-      <InputLabel htmlFor={props.name}>{label}</InputLabel>
-      <OutlinedInput 
-        id={props.name} 
-        aria-describedby={ariaDescribe} 
-        {...field} 
-        {...props}
-        type="search" 
-      />
-      <FormHelperText>{meta.error}</FormHelperText>
+      <label htmlFor={props.name}>{label}</label>
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+        ) 
+        : null
+      }
     </FormControl>
   );
 };
@@ -38,4 +39,15 @@ export const MyTextInput = ({ label, ariaDescribe, ...props }:myTextProps) => {
       <div className="error">{meta.error}</div>
     ) : null}
     </>
+
+
+    <InputLabel htmlFor={props.name}>{label}</InputLabel>
+      <OutlinedInput 
+        id={props.name} 
+        aria-describedby={ariaDescribe} 
+        {...field} 
+        {...props}
+        type="search" 
+      />
+      <FormHelperText>{meta.error}</FormHelperText>
 */
