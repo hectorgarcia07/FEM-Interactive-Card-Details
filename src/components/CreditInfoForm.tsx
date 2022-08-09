@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material';
+import { Button, Grid, TextField } from '@mui/material';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { MyTextInput } from './CustomInputs'
 import { validationSchema, initialValues } from '../Yup/formValidation'
@@ -20,31 +20,42 @@ const CreditInfoForm = () => {
           <Grid item xs={12}>
             <MyTextInput
               label="CARHOLDER NAME"
-              ariaDescribe="Enter cardholder name"
               name="name"
-              type="text"
+              type='text'
               placeholder="e.g. Jane Appleseed"
             />
           </Grid>
           <Grid item xs={12}>
-            <label htmlFor="cardNumber">CARD NUMBER</label>
-            <Field name="cardNumber" type="text" />
-            <ErrorMessage name="cardNumber" />
+            <MyTextInput
+              label="Card Number"
+              name="cardNumber"
+              type='text'
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
           </Grid>
           <Grid item xs={3}>
-            <label htmlFor="month">EXP. DATE</label>
-            <Field name="month" type="text" />
-            <ErrorMessage name="month" />
+            <MyTextInput
+              label="EXP. DATE"
+              name="month"
+              type='text'
+              placeholder="MM"
+            />
           </Grid>
           <Grid item xs={3}>
-            <label htmlFor="year">(MM/YY)</label>
-            <Field name="year" type="text" />
-            <ErrorMessage name="year" />
+            <MyTextInput
+              label="(MM/YY)"
+              name="year"
+              type='text'
+              placeholder="YY"
+            />
           </Grid>
           <Grid item xs={6}>
-            <label htmlFor="cvc">CVC</label>
-            <Field name="cvc" type="text" />
-            <ErrorMessage name="cvc" />
+            <MyTextInput
+              label="(MM/YY)"
+              name="cvc"
+              type='text'
+              placeholder="e.g. 123"
+            />
           </Grid>
           <Grid item xs={12}>
             <Button color="primary" variant="contained" fullWidth type="submit">

@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import Form from './components/CreditInfoForm'
+import { Box, ThemeProvider } from '@mui/system';
 /*
 <div className="App">
       <header className="App-header">
@@ -21,7 +22,9 @@ import Form from './components/CreditInfoForm'
 
 function App() {
   return (
-    <Form />
+    <Box sx={{ maxWidth: 350, bgcolor: 'blue' }} >
+      <Form />
+    </Box>
   );
 }
 
