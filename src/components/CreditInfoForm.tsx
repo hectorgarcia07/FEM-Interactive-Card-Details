@@ -1,9 +1,11 @@
-import { Button, Grid, TextField } from '@mui/material';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Button, Grid, useTheme } from '@mui/material';
+import { Formik, Form } from 'formik';
 import { MyTextInput } from './CustomInputs'
 import { validationSchema, initialValues } from '../Yup/formValidation'
 
 const CreditInfoForm = () => {
+  const theme = useTheme()
+
   return (
     <Formik
       initialValues={initialValues}
@@ -16,7 +18,12 @@ const CreditInfoForm = () => {
       }}
     >
       <Form>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{ 
+          p: '0.5rem', 
+          width: '100%',
+          m: '0',
+          bgcolor: theme.colors.white
+        }} >
           <Grid item xs={12}>
             <MyTextInput
               label="CARHOLDER NAME"

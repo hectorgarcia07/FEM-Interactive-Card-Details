@@ -2,10 +2,11 @@ import * as React from 'react';
 import FormControlUnstyled, {
   useFormControlUnstyledContext,
 } from '@mui/base/FormControlUnstyled';
+import { useTheme } from '@mui/material';
 import InputUnstyled, { inputUnstyledClasses } from '@mui/base/InputUnstyled';
 import { styled } from '@mui/system';
 import clsx from 'clsx';
-import { FieldAttributes, FieldHookConfig, useField } from 'formik';
+import { FieldHookConfig, useField } from 'formik';
 
 
 const blue = {
@@ -40,7 +41,7 @@ const Input = styled(InputUnstyled)(
     background: ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
     border: 1px solid ;
     border-radius: 8px;
-    padding: 12px 12px;
+    padding: 0;
 
     &:hover {
       background: ${theme.palette.mode === 'dark' ? '' : grey[100]};
@@ -103,6 +104,7 @@ type MyRadioProps = myTextProps & FieldHookConfig<string>
 export function MyTextInput({ label, placeholder, ...props }:MyRadioProps) {
   const [field, meta] = useField(props);
   const errorText = meta.error && meta.touched ? meta.error : "";
+  const theme = useTheme()
   
   return (
     <FormControlUnstyled defaultValue="" error={!!errorText} {...field}>

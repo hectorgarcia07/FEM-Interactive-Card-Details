@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import Form from './components/CreditInfoForm'
-import { Box, ThemeProvider } from '@mui/system';
+import { Box } from '@mui/system';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Header from './components/Header';
+import theme from './theme/theme'
+
 /*
 <div className="App">
       <header className="App-header">
@@ -22,9 +26,13 @@ import { Box, ThemeProvider } from '@mui/system';
 
 function App() {
   return (
-    <Box sx={{ maxWidth: 350, bgcolor: 'blue' }} >
-      <Form />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <CssBaseline enableColorScheme />
+      <Box sx={{ maxWidth: '375px', margin: '0 auto' }} >
+        <Header />
+        <Form />
+      </Box>
+    </ThemeProvider>
   );
 }
 
