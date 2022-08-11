@@ -3,9 +3,30 @@ import bgMobile from '../images/bg-main-mobile.png'
 import cardBack from '../images/bg-card-back.png'
 import cardFront from '../images/bg-card-front.png'
 import cardLogo from '../images/card-logo.svg'
+import { useFormContext } from '../context/FormContext'
+import { useEffect } from 'react'
 
-const Header = () => {
+interface FormValues {
+  name: string;
+  cardNumber: string;
+  month: string;
+  year: string;
+  cvc: string
+}
+
+interface HeaderProps{
+  valuesForm: FormValues
+}
+
+const Header = ({ valuesForm }:HeaderProps) => {
   const theme = useTheme()
+  const formContext = useFormContext()
+  console.log('Render')
+  useEffect(() => {
+    console.log( "Values", formContext.values)
+
+  },[formContext.values.name])
+
   return (
     <Box sx={{ maxWidth: '100%', position: 'relative', mb: '3.5rem', fontFamily: 'Space Grotesk' }}>
       <Box 
@@ -47,7 +68,9 @@ const Header = () => {
           position: 'relative',
           top: '-55px'
         }}>
-          <Box component="img" src={cardFront} sx={{ width: '100%', display: 'block' }} />
+          <Box component="img" src={cardFront} 
+            sx={{ width: '100%', display: 'block', boxShadow: '7px 4px 60px gray' }} 
+          />
           <Box component="img" 
             src={cardLogo} 
             sx={{ 

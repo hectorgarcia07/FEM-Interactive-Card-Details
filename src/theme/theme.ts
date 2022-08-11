@@ -17,6 +17,9 @@ declare module '@mui/material/styles' {
       DarkGrayishViolet: string;
       VeryDarkViolet: string;
     };
+    font: {
+      font: string;
+    };
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
@@ -34,6 +37,9 @@ declare module '@mui/material/styles' {
       LightGrayishViolet: string;
       DarkGrayishViolet: string;
       VeryDarkViolet: string;
+    };
+    font?: {
+      font: string;
     };
   }
 }
@@ -54,7 +60,9 @@ const theme = createTheme({
     DarkGrayishViolet: 'hsl(279, 6%, 55%)',
     VeryDarkViolet: 'hsl(278, 68%, 11%)',
   },
-
+  font: {
+    font: 'Space Grotesk, sans-serif'
+  }
 });
 
 export default theme

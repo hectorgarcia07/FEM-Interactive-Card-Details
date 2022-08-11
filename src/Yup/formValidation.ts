@@ -9,7 +9,7 @@ export const validationSchema = yup.object().shape({
     .required("Card number cannot be blank")
     .matches(
       /^\d{4}[ ]?\d{4}[ ]?\d{4}[ ]?\d{4}$/, 
-      'Must be numbers and follow this format: xxxx xxxx xxxx xxxx'
+      `Numbers only and in this format:\nxxxx xxxx xxxx xxxx`
     ),
   month: yup
     .string()
