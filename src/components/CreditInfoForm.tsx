@@ -1,33 +1,17 @@
 import { Button, Grid, useTheme } from '@mui/material';
-import { Formik, Form, useFormikContext } from 'formik';
+import { Formik, Form } from 'formik';
 import { MyTextInput } from './CustomInputs'
 import { validationSchema, initialValues } from '../Yup/formValidation'
-import { useFormContext } from '../context/FormContext';
-import { Provider, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Header from './Header';
+import { FormValues } from '../types/FormValues'
+import FormObserver from './FormObserver'
 
-interface FormValues {
-  name: string;
-  cardNumber: string;
-  month: string;
-  year: string;
-  cvc: string
-}
-
-interface FormObserverProp{
-  updateValues: React.Dispatch<React.SetStateAction<Provider<FormValues>>>
-}
-
-const FormObserver = ( {updateValues}:FormObserverProp ) => {
-  const updateFormContext = useFormContext()
-  const form = useFormikContext()
-
-  return <></>
-}
+const defaultValues = {name: '', cardNumber: '', month: '', year: '', cvc: ''}
 
 const CreditInfoForm = () => {
   const theme = useTheme()
-  const [valuesForm, updateValues] = useState<FormValues>({name: '', cardNumber: '', month: '', year: '', cvc: ''})
+  const [valuesForm, updateValues] = useState<FormValues>(defaultValues)
 
   return (
   <>
@@ -48,7 +32,8 @@ const CreditInfoForm = () => {
           p: '1.4rem', 
           width: '100%',
           m: '0',
-          bgcolor: theme.colors.white
+          bgcolor: theme.colors.white,
+          paddingTop: '0'
         }} 
         columnSpacing={{ xs: 1 }}
         >
@@ -58,6 +43,7 @@ const CreditInfoForm = () => {
               name="name"
               type='text'
               placeholder="e.g. Jane Appleseed"
+              maxLength={28}
             />
           </Grid>
           <Grid item xs={12} >
@@ -66,30 +52,34 @@ const CreditInfoForm = () => {
               name="cardNumber"
               type='text'
               placeholder="e.g. 1234 5678 9123 0000"
+              maxLength={19}
             />
           </Grid>
-          <Grid item xs={3} >
+          <Grid item xs={3} sx={{ alignSelf: 'flex-end'}}>
             <MyTextInput
               label="EXP. DATE"
               name="month"
               type='text'
               placeholder="MM"
+              maxLength={2}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={3} sx={{ alignSelf: 'flex-end'}}>
             <MyTextInput
               label="(MM/YY)"
               name="year"
               type='text'
               placeholder="YY"
+              maxLength={2}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={6} sx={{ alignSelf: 'flex-end'}}>
             <MyTextInput
-              label="(MM/YY)"
+              label="CVC"
               name="cvc"
               type='text'
               placeholder="e.g. 123"
+              maxLength={3}
             />
           </Grid>
           <Grid item xs={12} style={{ marginTop: '0.5rem' }}>

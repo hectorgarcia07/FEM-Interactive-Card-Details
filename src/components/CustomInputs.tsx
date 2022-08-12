@@ -97,21 +97,23 @@ const HelperText = styled((props: {errorText: string}) => {
 interface myTextProps {
   label: string;
   placeholder: string;
+  maxLength?: number
 }
 
 type MyRadioProps = myTextProps & FieldHookConfig<string>
 
-export function MyTextInput({ label, placeholder, ...props }:MyRadioProps) {
+export function MyTextInput({ label, placeholder, maxLength, ...props }:MyRadioProps) {
   const [field, meta] = useField(props);
   const errorText = meta.error && meta.touched ? meta.error : "";
   
   return (
-    <FormControlUnstyled defaultValue="" error={!!errorText} {...field}>
+    <FormControlUnstyled  error={!!errorText} {...field} >
       <Label htmlFor={props.name} error={!!errorText}>{label} </Label>
       <Input 
         placeholder={placeholder}
         name={props.name}
         id={props.name}
+        componentsProps={{ input: { maxLength } }}
       />
       <HelperText errorText={errorText} />
     </FormControlUnstyled>

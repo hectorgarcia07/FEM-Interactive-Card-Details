@@ -1,12 +1,5 @@
 import React, { useContext, useState } from "react";
-
-interface FormValues {
-  name: string;
-  cardNumber: string;
-  month: string;
-  year: string;
-  cvc: string
-}
+import { FormValues } from '../types/FormValues'
 
 interface ContextValues {
   values: FormValues;
@@ -24,11 +17,7 @@ export function useFormContext(){
 }
 
 export function FormConextProvider ({ children }:React.PropsWithChildren<{example?: string}>){
-  const [formValues, setFormValues] = useState<FormValues>({name: '', cardNumber: '', month: '', year: '', cvc: ''})
-
-  function updateFormValues(values:FormValues) {
-    setFormValues(values)
-  }
+  const [formValues, setFormValues] = useState<FormValues>(defaultState.values)
 
   return (
     <FormContext.Provider value={{values: formValues, updateValues: setFormValues}}>

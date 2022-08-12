@@ -20,7 +20,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <FormConextProvider>
         <CssBaseline enableColorScheme />
-        <Box sx={{ maxWidth: '375px', margin: '0 auto' }} >
+        <Box sx={{ maxWidth: '375px', margin: '0 auto', minWidth: '298px' }} >
           <Form />
         </Box>
       </FormConextProvider>
