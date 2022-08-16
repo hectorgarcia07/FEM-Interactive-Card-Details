@@ -2,20 +2,18 @@ import { Button, Grid, useTheme } from '@mui/material';
 import { Formik, Form } from 'formik';
 import { MyTextInput } from './CustomInputs'
 import { validationSchema, initialValues } from '../Yup/formValidation'
-import { useState } from 'react';
-import Header from './Header';
-import { FormValues } from '../types/FormValues'
 import FormObserver from './FormObserver'
+import { FormValues } from '../types/FormValues';
 
-const defaultValues = {name: '', cardNumber: '', month: '', year: '', cvc: ''}
+interface CreditInfoFormProps {
+  updateValues: React.Dispatch<React.SetStateAction<FormValues>>
+}
 
-const CreditInfoForm = () => {
+const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
   const theme = useTheme()
-  const [valuesForm, updateValues] = useState<FormValues>(defaultValues)
-
+  
   return (
   <>
-  <Header valuesForm={valuesForm} />
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}

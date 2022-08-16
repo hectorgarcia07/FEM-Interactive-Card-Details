@@ -20,6 +20,12 @@ declare module '@mui/material/styles' {
     font: {
       font: string;
     };
+    root:{
+      maxWidth: string, 
+      minWidth: string; 
+      display: string; 
+      flexDirection: string;    
+    }
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
@@ -41,6 +47,12 @@ declare module '@mui/material/styles' {
     font?: {
       font: string;
     };
+    root?: {
+      maxWidth: string; 
+      minWidth: string;
+      display: string;      
+      flexDirection: string;
+    }
   }
 }
 
@@ -62,6 +74,12 @@ const theme = createTheme({
   },
   font: {
     font: 'Space Grotesk, sans-serif'
+  },
+  root: {
+    maxWidth: '375px', 
+    minWidth: '298px',
+    display: 'flex',      
+    flexDirection: 'column'
   }
 });
 
