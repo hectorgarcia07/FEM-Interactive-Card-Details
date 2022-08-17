@@ -21,11 +21,15 @@ declare module '@mui/material/styles' {
       font: string;
     };
     root:{
-      maxWidth: string, 
+      maxWidth: string;
       minWidth: string; 
       display: string; 
       flexDirection: string;    
-    }
+    };
+    containerWidth: {
+      minWidth: string;
+      maxWidth: string;
+    };
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
@@ -52,18 +56,38 @@ declare module '@mui/material/styles' {
       minWidth: string;
       display: string;      
       flexDirection: string;
-    }
+    };
+    containerWidth: {
+      minWidth: string;
+      maxWidth: string;
+    };
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    mainWidthBreakpoint: true;
   }
 }
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      mainWidthBreakpoint: 730
+    },
+  },
   gradiant: {
     start: 'hsl(249, 99%, 64%)',
     end: 'hsl(278, 94%, 30%)'
   },
   size: {
     fontSize: '18px',
-    weight: '500'
+    weight: '500',
   },
   colors: {
     error: 'hsl(0, 100%, 66%)',
@@ -80,6 +104,10 @@ const theme = createTheme({
     minWidth: '298px',
     display: 'flex',      
     flexDirection: 'column'
+  },
+  containerWidth: {
+    minWidth: '298px',
+    maxWidth: '375px', 
   }
 });
 

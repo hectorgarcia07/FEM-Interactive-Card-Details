@@ -1,16 +1,15 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
-const Root = styled('main')(({ theme }) => ({
-  minWidth: '298px',
-  maxWidth: '375px', 
+const Main = styled('main')(({ theme }) => ({
   margin: '0 auto', 
   display: 'flex', 
   flexDirection: 'column',
-  [theme.breakpoints.unit('523px')]: {
-    minWidth: '100%',
-    flexDirection: 'row'
-  },
+  [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+    width: '100%',
+    flexDirection: 'row',
+    height: '100vh'
+  }
 }
 ));
 
-export default Root
+export default Main

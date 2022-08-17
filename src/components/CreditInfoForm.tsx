@@ -11,6 +11,8 @@ interface CreditInfoFormProps {
 
 const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
   const theme = useTheme()
+
+  const style={ padding: 0 }
   
   return (
   <>
@@ -29,13 +31,15 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
         <Grid container sx={{ 
           p: '1.4rem', 
           width: '100%',
-          m: '0',
           bgcolor: theme.colors.white,
-          paddingTop: '0'
+          paddingTop: '5.2rem',
+          minWidth: theme.containerWidth.minWidth,
+          maxWidth: theme.containerWidth.maxWidth,
         }} 
         columnSpacing={{ xs: 1 }}
+        style={{ margin: '0 auto', width: '100%'}}
         >
-          <Grid item xs={12} >
+          <Grid item xs={12} style={style} >
             <MyTextInput
               label="Cardholder name"
               name="name"
@@ -44,7 +48,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
               maxLength={28}
             />
           </Grid>
-          <Grid item xs={12} >
+          <Grid item xs={12} style={style} >
             <MyTextInput
               label="Card Number"
               name="cardNumber"
@@ -53,7 +57,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
               maxLength={19}
             />
           </Grid>
-          <Grid item xs={3} sx={{ alignSelf: 'flex-end'}}>
+          <Grid item xs={3} sx={{ alignSelf: 'flex-end'}} style={style} >
             <MyTextInput
               label="EXP. DATE"
               name="month"
@@ -62,7 +66,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
               maxLength={2}
             />
           </Grid>
-          <Grid item xs={3} sx={{ alignSelf: 'flex-end'}}>
+          <Grid item xs={3} sx={{ alignSelf: 'flex-end'}} style={style} >
             <MyTextInput
               label="(MM/YY)"
               name="year"
@@ -71,7 +75,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
               maxLength={2}
             />
           </Grid>
-          <Grid item xs={6} sx={{ alignSelf: 'flex-end'}}>
+          <Grid item xs={6} sx={{ alignSelf: 'flex-end'}} style={style} >
             <MyTextInput
               label="CVC"
               name="cvc"
@@ -80,7 +84,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
               maxLength={3}
             />
           </Grid>
-          <Grid item xs={12} style={{ marginTop: '0.5rem' }}>
+          <Grid item xs={12} sx={{ mt: '0.5rem' }} style={style} >
             <Button color="primary" variant="contained" fullWidth type="submit" 
               sx={{ mt: '1rem', p: '0.7rem' , borderRadius: '0.5rem', fontSize: '1.1rem', textTransform: 'none', bgcolor: theme.colors.VeryDarkViolet }}
             >
