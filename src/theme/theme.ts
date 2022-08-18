@@ -31,6 +31,7 @@ declare module '@mui/material/styles' {
       maxWidth: string;
     };
   }
+  
   // allow configuration using `createTheme`
   interface ThemeOptions {
     gradiant?: {
@@ -78,7 +79,7 @@ const theme = createTheme({
       md: 900,
       lg: 1200,
       xl: 1536,
-      mainWidthBreakpoint: 730
+      mainWidthBreakpoint: 767
     },
   },
   gradiant: {

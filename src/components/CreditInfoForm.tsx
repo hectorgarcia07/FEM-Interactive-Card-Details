@@ -11,8 +11,13 @@ interface CreditInfoFormProps {
 
 const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
   const theme = useTheme()
-
-  const style={ padding: 0 }
+  const style = { padding: 0 }
+  const formStyle = {
+    [`@media (minWidth: ${theme.breakpoints.values.mainWidthBreakpoint})`]:{
+      width: 'calc(100% - 352px)',
+      backgroundColor: 'red'
+    }
+  }
   
   return (
   <>
@@ -26,7 +31,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
         }, 400);
       }}
     >
-      <Form>
+      <Form style={ formStyle }>
         <FormObserver updateValues={updateValues}/>
         <Grid container sx={{ 
           p: '1.4rem', 
@@ -37,7 +42,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
           maxWidth: theme.containerWidth.maxWidth,
         }} 
         columnSpacing={{ xs: 1 }}
-        style={{ margin: '0 auto', width: '100%'}}
+        style={{ marginLeft: '0', margin: '0 auto', width: '100%'}}
         >
           <Grid item xs={12} style={style} >
             <MyTextInput

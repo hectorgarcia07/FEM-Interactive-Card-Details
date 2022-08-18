@@ -9,6 +9,9 @@ const Header = styled('div')(({ theme }) => ({
   backgroundImage: `url(${ bgMainMobile })`,
   [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
     backgroundImage: `url(${ bgMainDesktop })`,
+    flexGrow: '1',
+    height: '100vh',
+    maxWidth: '352px'
   }
 }
 ));

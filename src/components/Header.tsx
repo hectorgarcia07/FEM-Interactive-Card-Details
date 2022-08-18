@@ -25,14 +25,22 @@ const Header = ({ valuesForm }:HeaderProps) => {
           m: '0 auto',
           padding: '0 1rem',
           maxWidth: theme.containerWidth.maxWidth,
-          minWidth: theme.containerWidth.minWidth
+          minWidth: theme.containerWidth.minWidth,
+          [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }
         }}
       >
         <Box sx={{ 
           top: '30px',
           position: 'relative',
           display: 'flex',
-          justifyContent: 'flex-end'
+          justifyContent: 'flex-end',
+          [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+            order: '1',
+          }
         }}>
           <Box component="img" src={bgCardBack} sx={{ maxWidth: '266px', display: 'block' }} />
           <Box component="span" 
