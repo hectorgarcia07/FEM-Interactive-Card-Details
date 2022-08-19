@@ -30,6 +30,52 @@ declare module '@mui/material/styles' {
       minWidth: string;
       maxWidth: string;
     };
+    cardWidth: {
+      minWidth: string;
+      breakpointWidth: string;
+    };
+    cardBack: {
+      mobile: {
+        top: string;
+        right: string;
+        fontSize: string;
+      },
+      desktop: {
+        top: string;
+        right: string;
+        fontSize: string;
+      }
+    };
+    cardFront: {
+      mobile: {
+        cardNumber: {
+          top: string; left: string; letterSpacing: string; pb: string;
+        },
+        cardName: {
+          bottom: string; 
+          display:string;
+          p: string; 
+          fontSize: string;
+        }
+      },
+      desktop: {
+        cardNumber: {
+          top: string; left: string; letterSpacing: string; pb: string; fontSize: string;
+        },
+        cardName: {
+          bottom: string; 
+          display: string; 
+          p: string; 
+          fontSize: string;
+          letterSpacing: string;
+        },
+        cardPosition: {
+          top: string;
+          left: string;
+          width: string;
+        }
+      }
+    };
   }
   
   // allow configuration using `createTheme`
@@ -62,6 +108,52 @@ declare module '@mui/material/styles' {
       minWidth: string;
       maxWidth: string;
     };
+    cardWidth: {
+      minWidth: string;
+      breakpointWidth: string;
+    };
+    cardBack: {
+      mobile: {
+        top: string;
+        right: string;
+        fontSize: string;
+      },
+      desktop: {
+        top: string;
+        right: string;
+        fontSize: string;
+      }
+    };
+    cardFront: {
+      mobile: {
+        cardNumber: {
+          top: string; left: string; letterSpacing: string; pb: string; 
+        },
+        cardName: {
+          bottom: string; 
+          display:string;
+          p: string; 
+          fontSize: string;
+        }
+      },
+      desktop: {
+        cardNumber: {
+          top: string; left: string; letterSpacing: string; pb: string; fontSize: string;
+        },
+        cardName: {
+          bottom: string; 
+          display: string; 
+          p: string; 
+          fontSize: string;
+          letterSpacing: string;
+        },
+        cardPosition: {
+          top: string;
+          left: string;
+          width: string;
+        }
+      }
+    }
   }
 }
 
@@ -79,7 +171,7 @@ const theme = createTheme({
       md: 900,
       lg: 1200,
       xl: 1536,
-      mainWidthBreakpoint: 767
+      mainWidthBreakpoint: 1014
     },
   },
   gradiant: {
@@ -109,6 +201,52 @@ const theme = createTheme({
   containerWidth: {
     minWidth: '298px',
     maxWidth: '375px', 
+  },
+  cardWidth: {
+    minWidth: '266px',
+    breakpointWidth: '325px'
+  },
+  cardBack: {
+    mobile: {
+      top: '59px', 
+      right: '30px', 
+      fontSize: '1rem'
+    },
+    desktop: {
+      top: '72px', 
+      right: '37px', 
+      fontSize: '1.2rem'
+    }
+  },
+  cardFront: {
+    mobile: {
+      cardNumber: {
+        top: '83px', left: '18px', letterSpacing: '0.1rem', pb: '0.5rem'
+      },
+      cardName: {
+        bottom: '12px', 
+        display: 'flex', 
+        p: '0 0.9rem', 
+        fontSize: '0.7rem', 
+      }
+    },
+    desktop: {
+      cardNumber: {
+        top: '106px', left: '22px', letterSpacing: '0.1rem', pb: '0.5rem', fontSize: '1.3rem'
+      },
+      cardName: {
+        bottom: '12px', 
+        display: 'flex', 
+        p: '0 1.2rem', 
+        fontSize: '0.6rem', 
+        letterSpacing: '1px'
+      },
+      cardPosition: {
+        top: '-19px',
+        left: '-56px',
+        width: '325px'
+      }
+    }
   }
 });
 

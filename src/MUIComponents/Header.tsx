@@ -11,7 +11,8 @@ const Header = styled('div')(({ theme }) => ({
     backgroundImage: `url(${ bgMainDesktop })`,
     flexGrow: '1',
     height: '100vh',
-    maxWidth: '352px'
+    maxWidth: '352px',
+    marginRight: '6rem'
   }
 }
 ));

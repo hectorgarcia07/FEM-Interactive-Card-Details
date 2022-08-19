@@ -11,7 +11,6 @@ interface HeaderProps {
 const Header = ({ valuesForm }:HeaderProps) => {
   const theme = useTheme()
   const { name, cardNumber, month, year, cvc } = valuesForm
-  console.log('Render', valuesForm)
  
   return (
     <HeaderComp style={{ backgroundSize: 'cover' }}>
@@ -29,7 +28,8 @@ const Header = ({ valuesForm }:HeaderProps) => {
           [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            left: '159px'
           }
         }}
       >
@@ -40,25 +40,54 @@ const Header = ({ valuesForm }:HeaderProps) => {
           justifyContent: 'flex-end',
           [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
             order: '1',
+            left: '72px',
+            top: '13px'
           }
         }}>
-          <Box component="img" src={bgCardBack} sx={{ maxWidth: '266px', display: 'block' }} />
+          <Box component="img" src={bgCardBack} 
+            sx={{ maxWidth: theme.cardWidth.minWidth, display: 'block',
+              [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+                maxWidth: theme.cardWidth.breakpointWidth
+              }
+            }} 
+          />
           <Box component="span" 
             color={theme.colors.white} 
-            sx={{ position: 'absolute', top: '59px', right: '30px', fontSize: '1rem'}}>
-              {setCVC(cvc)}
+            sx={{ position: 'absolute', 
+            top: theme.cardBack.mobile.top, 
+            right: theme.cardBack.mobile.right, 
+            fontSize: theme.cardBack.mobile.fontSize,
+            [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+              top: theme.cardBack.desktop.top, 
+              right: theme.cardBack.desktop.right, 
+              fontSize: theme.cardBack.desktop.fontSize,
+            }
+          }}>
+            {setCVC(cvc)}
           </Box>
         </Box>
         <Box sx={{ 
-          maxWidth: '266px',
+          maxWidth: theme.cardWidth.minWidth,
           zIndex: '1',
           position: 'relative',
           display: 'flex',
           justifyContent: 'flex-start',
-          top: '-32px'
+          top: '-32px',
+          [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+            width: theme.cardWidth.breakpointWidth,
+            maxWidth: 'none',
+            top: theme.cardFront.desktop.cardPosition.top,
+            left: theme.cardFront.desktop.cardPosition.left
+          }
         }}>
           <Box component="img" src={bgCardFront} 
-            sx={{ maxWidth: '266px', display: 'block', boxShadow: '7px 4px 60px gray' }} 
+            sx={{ 
+              maxWidth: theme.cardWidth.minWidth, display: 'block', boxShadow: '7px 4px 60px gray',
+              [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+                maxWidth: theme.cardWidth.breakpointWidth,
+                boxShadow: 'none'
+              }
+            }} 
           />
           <Box component="img" 
             src={cardLogo} 
@@ -67,12 +96,20 @@ const Header = ({ valuesForm }:HeaderProps) => {
               display: 'block',
               top: '22px', 
               width: '19%', 
-              left: '17px' }}
-            />
+              left: '17px' 
+            }}
+          />
           <Box color={theme.colors.white} 
-            sx={{ position: 'absolute', top: '83px', left: '18px', letterSpacing: '0.1rem', pb: '0.5rem' }}>
-              {setCardNumber(cardNumber)}
-            </Box>
+            sx={{ position: 'absolute', 
+            top: '83px', left: '18px', letterSpacing: '0.1rem', pb: '0.5rem',
+            [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+              top: theme.cardFront.desktop.cardNumber.top,
+              left: theme.cardFront.desktop.cardNumber.left,
+              fontSize: theme.cardFront.desktop.cardNumber.fontSize
+            }
+          }}>
+            {setCardNumber(cardNumber)}
+          </Box>
           <Box 
             sx={{ 
               width: '100%',
@@ -83,7 +120,10 @@ const Header = ({ valuesForm }:HeaderProps) => {
               justifyContent: 'space-between', 
               fontSize: '0.7rem', 
               fontWeight: 'bolder', 
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
+                p: '0 1.3rem'
+              }
             }}
           >
             <Box color={theme.colors.white} >
