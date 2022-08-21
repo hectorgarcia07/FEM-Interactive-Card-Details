@@ -9,6 +9,7 @@ declare module '@mui/material/styles' {
     size: {
       fontSize: string;
       weight: string;
+      maxScreenWidth: string;
     };
     colors: {
       error: string;
@@ -76,6 +77,14 @@ declare module '@mui/material/styles' {
         }
       }
     };
+    header: {
+      mobile: {
+        height: string;
+      },
+      desktop: {
+        height: string;
+      }
+    }
   }
   
   // allow configuration using `createTheme`
@@ -87,6 +96,7 @@ declare module '@mui/material/styles' {
     size?: {
       fontSize: string;
       weight: string;
+      maxScreenWidth: string;
     };
     colors?: {
       error: string;
@@ -153,6 +163,14 @@ declare module '@mui/material/styles' {
           width: string;
         }
       }
+    },
+    header: {
+      mobile: {
+        height: string;
+      },
+      desktop: {
+        height: string;
+      }
     }
   }
 }
@@ -181,6 +199,7 @@ const theme = createTheme({
   size: {
     fontSize: '18px',
     weight: '500',
+    maxScreenWidth: '1440px'
   },
   colors: {
     error: 'hsl(0, 100%, 66%)',
@@ -246,6 +265,14 @@ const theme = createTheme({
         left: '-56px',
         width: '325px'
       }
+    }
+  },
+  header: {
+    mobile: {
+      height: '240px'
+    },
+    desktop: {
+      height: '100vh',
     }
   }
 });

@@ -1,4 +1,3 @@
-import logo from './logo.svg'
 import { useState } from 'react'
 import Form from './components/CreditInfoForm'
 import { CssBaseline, ThemeProvider } from "@mui/material"
@@ -7,9 +6,13 @@ import theme from './theme/theme'
 import { FormConextProvider } from './context/FormContext'
 import { FormValues } from './types/FormValues'
 import Main from './MUIComponents/Main'
+import Compleated from './components/Compleated'
 
 function App() {
   const defaultValues = {name: '', cardNumber: '', month: '', year: '', cvc: ''}
+
+  //will be used to hold current form values/state and be able to share it
+  //with the header
   const [valuesForm, updateValues] = useState<FormValues>(defaultValues)
 
   return (
@@ -18,7 +21,7 @@ function App() {
         <CssBaseline enableColorScheme />
         <Main>
           <Header valuesForm={valuesForm} />
-          <Form updateValues={updateValues} />
+          <Compleated />
         </Main>
       </FormConextProvider>
     </ThemeProvider>
@@ -26,3 +29,5 @@ function App() {
 }
 
 export default App;
+
+//<Form updateValues={updateValues} />

@@ -1,5 +1,5 @@
 import { Button, Grid, useTheme, Box } from '@mui/material';
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import { MyTextInput } from './CustomInputs'
 import { validationSchema, initialValues } from '../Yup/formValidation'
 import FormObserver from './FormObserver'
@@ -11,7 +11,7 @@ interface CreditInfoFormProps {
 
 const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
   const theme = useTheme()
-  const style = { padding: 0 }
+  const style = { padding: '0' }
   const formStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -42,7 +42,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
             paddingTop: '5.2rem',
             minWidth: theme.containerWidth.minWidth,
             maxWidth: theme.containerWidth.maxWidth,
-          }} 
+          }}
           columnSpacing={{ xs: 1 }}
           style={{ marginLeft: '0', margin: '0 auto', width: '100%'}}
           >
@@ -64,7 +64,7 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
                 maxLength={19}
               />
             </Grid>
-            <Grid item xs={3} sx={{ alignSelf: 'flex-end'}} style={style} >
+            <Grid item xs={3} sx={{ alignSelf: 'flex-start', }} style={style} >
               <MyTextInput
                 label="EXP. DATE"
                 name="month"
@@ -73,23 +73,23 @@ const CreditInfoForm = ({updateValues}:CreditInfoFormProps) => {
                 maxLength={2}
               />
             </Grid>
-            <Grid item xs={3} sx={{ alignSelf: 'flex-end'}} style={style} >
-              <MyTextInput
-                label="(MM/YY)"
-                name="year"
-                type='text'
-                placeholder="YY"
-                maxLength={2}
-              />
+            <Grid item xs={3} sx={{ alignSelf: 'flex-start'}}  >
+                <MyTextInput
+                  label="(MM/YY)"
+                  name="year"
+                  type='text'
+                  placeholder="YY"
+                  maxLength={2}
+                />
             </Grid>
-            <Grid item xs={6} sx={{ alignSelf: 'flex-end'}} style={style} >
-              <MyTextInput
-                label="CVC"
-                name="cvc"
-                type='text'
-                placeholder="e.g. 123"
-                maxLength={3}
-              />
+            <Grid item xs={6} sx={{ alignSelf: 'flex-start'}}  >
+                <MyTextInput
+                  label="CVC"
+                  name="cvc"
+                  type='text'
+                  placeholder="e.g. 123"
+                  maxLength={3}
+                />
             </Grid>
             <Grid item xs={12} sx={{ mt: '0.5rem' }} style={style} >
               <Button color="primary" variant="contained" fullWidth type="submit" 

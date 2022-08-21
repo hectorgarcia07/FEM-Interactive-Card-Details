@@ -5,7 +5,7 @@ const Main = styled('main')(({ theme }) => ({
   display: 'flex', 
   flexDirection: 'column',
   [ theme.breakpoints.up('mainWidthBreakpoint') ]: {
-    maxWidth: '1440px',
+    maxWidth: theme.size.maxScreenWidth,
     flexDirection: 'row',
     height: '100vh'
   }

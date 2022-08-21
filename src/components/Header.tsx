@@ -13,7 +13,7 @@ const Header = ({ valuesForm }:HeaderProps) => {
   const { name, cardNumber, month, year, cvc } = valuesForm
  
   return (
-    <HeaderComp style={{ backgroundSize: 'cover' }}>
+    <HeaderComp>
       <Box
         sx={{
           position: 'absolute',
