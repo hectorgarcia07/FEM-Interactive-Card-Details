@@ -1,7 +1,11 @@
 import * as yup from 'yup';
 
 //get the current year and get the last two digits
-const last2 = new Date().getFullYear().toString().slice(-2);
+const str = new Date().getFullYear().toString().slice(-2).split('');
+//regex will be used to check if the last two digits of the year is greater 
+//than or equal to the current year
+const regex = `${str[0]}[${str[1]}-9]|[3-9][0-9]`
+const yearRegex = new RegExp(regex)
 
 export const validationSchema = yup.object().shape({
   name: yup
@@ -25,7 +29,7 @@ export const validationSchema = yup.object().shape({
     .string()
     .required('Cannot be blank')
     .matches(
-      /^\d{2}$/,
+      yearRegex,
       'Must be a valid year and in the following format: xx'
     ),
   cvc: yup
