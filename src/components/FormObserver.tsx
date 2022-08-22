@@ -9,7 +9,6 @@ interface FormObserverProp{
 const FormObserver = ( {updateValues}:FormObserverProp ) => {
   const form = useFormikContext()
   const values = form.values as FormValues
-  console.log('Number ', values.cardNumber)
   
   if(values.cardNumber)
     values.cardNumber = (values.cardNumber.replace(/ /g,'').match(/.{1,4}/g)?.join(' ') as string)

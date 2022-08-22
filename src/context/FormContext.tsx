@@ -7,7 +7,7 @@ interface ContextValues {
 }
 
 const defaultState = {
-  values: {name: '', cardNumber: '', month: '', year: '', cvc: ''},
+  values: { name: '', cardNumber: '', month: '', year: '', cvc: '', compleated: false },
 }
 
 const FormContext = React.createContext<ContextValues>(defaultState)

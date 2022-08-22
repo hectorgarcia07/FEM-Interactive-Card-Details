@@ -3,6 +3,7 @@ export interface FormValues {
   cardNumber: string;
   month: string;
   year: string;
-  cvc: string
+  cvc: string;
+  compleated: boolean;
 }
 

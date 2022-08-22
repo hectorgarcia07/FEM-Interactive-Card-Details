@@ -9,7 +9,6 @@ declare module '@mui/material/styles' {
     size: {
       fontSize: string;
       weight: string;
-      maxScreenWidth: string;
     };
     colors: {
       error: string;
@@ -96,7 +95,6 @@ declare module '@mui/material/styles' {
     size?: {
       fontSize: string;
       weight: string;
-      maxScreenWidth: string;
     };
     colors?: {
       error: string;
@@ -199,7 +197,6 @@ const theme = createTheme({
   size: {
     fontSize: '18px',
     weight: '500',
-    maxScreenWidth: '1440px'
   },
   colors: {
     error: 'hsl(0, 100%, 66%)',

@@ -9,7 +9,7 @@ import Main from './MUIComponents/Main'
 import Compleated from './components/Compleated'
 
 function App() {
-  const defaultValues = {name: '', cardNumber: '', month: '', year: '', cvc: ''}
+  const defaultValues = {name: '', cardNumber: '', month: '', year: '', cvc: '', compleated: false}
 
   //will be used to hold current form values/state and be able to share it
   //with the header
@@ -21,7 +21,7 @@ function App() {
         <CssBaseline enableColorScheme />
         <Main>
           <Header valuesForm={valuesForm} />
-          <Compleated />
+          { valuesForm.compleated ? <Compleated /> : <Form updateValues={updateValues} /> }
         </Main>
       </FormConextProvider>
     </ThemeProvider>
@@ -29,5 +29,3 @@ function App() {
 }
 
 export default App;
-
-//<Form updateValues={updateValues} />
