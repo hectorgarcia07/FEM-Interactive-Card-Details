@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- GitHub Repo: [https://github.com/hectorgarcia07/FEM-Interactive-Card-Details](link)
-- GitHub Pages: [https://hectorgarcia07.github.io/FEM-Interactive-Card-Details](link)
+- GitHub Repo: [Link](https://github.com/hectorgarcia07/FEM-Interactive-Card-Details)
+- GitHub Pages: [Link](https://hectorgarcia07.github.io/FEM-Interactive-Card-Details)
 
 ## My process
 
