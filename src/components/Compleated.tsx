@@ -4,7 +4,7 @@ import { iconCompleate } from '../images'
 
 const Compleated = ( ) => {
   const theme = useTheme()
-
+ 
   const style = {
     display: 'flex',
     alignItems: 'center',
