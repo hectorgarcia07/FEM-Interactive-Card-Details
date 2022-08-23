@@ -12,9 +12,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -37,70 +35,42 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- GitHub Repo: [https://github.com/hectorgarcia07/FEM-Interactive-Card-Details](link)
+- GitHub Repo: [https://github.com/hectorgarcia07/FEM-Interactive-Card-Details](https://hectorgarcia07.github.io/FEM-Interactive-Card-Details/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
+- [Yup](https://github.com/jquense/yup) - For form validation
 - [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Formik](https://styled-components.com/) - Used to easily build forms
+- [MaterialUI](https://mui.com/) - Used to easily build components
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I leared quite a lot in the project. One of the issues that I had was how to create a form that can
+keep track of validation. This is where the iconic duo comes into play, Formik and Yup. With Formik,
+I could easily build a form and not worry about its own interal state. Formik pairs easily with Yup
+since I could easily create a form schema validator and pass that to Formik and validation is taken care of!
 
-To see how you can add code snippets, see below:
+The only issue with Formik is that passing it's current state to a parent component was difficult. I solved this
+by wraping the Form component with React context to allow its form state to be shared to it's parent.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I decided to learn MaterialUI to rapidly build components and styled it accordingly. Only issue was customizing and styling the form, but after reading the docs, it wasn't that bad.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I plan on expanding this by detecting the company of the card based on the card number (ex: AMX, VISA, MASTER CARD, etc...) and showing the logo accordingly as well as it's CVV number. I also plan to refactor the components
+a bit and add more CSS transition.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- GitHub - [Hector Garcia](https://github.com/hectorgarcia07)
+- Frontend Mentor - [@hectorgarcia07](https://www.frontendmentor.io/profile/hectorgarcia07)
+- Twitter - [@jdbjfl](https://www.twitter.com/jdbjfl)
